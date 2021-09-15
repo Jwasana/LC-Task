@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const Home = () => {
+  const [todoItem, setTodoitems] = useState("");
  const [items, setItems] = useState([
    "Assignment 01",
    "Assignment 02",
@@ -13,7 +14,7 @@ const Home = () => {
       <h1>Todo App</h1>
       
       <div>
-        <input type="text" />
+        <input type="text" value={todoItem} onChange={(e)=> setTodoitems(e.target.value)} />
         <button type="button">Add</button>
       </div>
 
@@ -23,6 +24,7 @@ const Home = () => {
             <li key={item}>{item}</li>
           ))
         }
+        <li>{todoItem}</li>
        
       </ul>
 
