@@ -1,3 +1,4 @@
+import cx from "classnames";
 import { useState } from "react";
 import {v4 as uuidv4 } from "uuid"
 
@@ -60,8 +61,8 @@ const Home = () => {
 
       <ul>
         {
-          items.map(({id, message}) => (
-            <li key={id} onClick={() => handdleToggle(id)}>{message}</li>
+          items.map(({id, message , done}) => (
+            <li key={id} onClick={() => handdleToggle(id)} className= {cx("item", { done})}>{message}</li>
           ))
         }
        
