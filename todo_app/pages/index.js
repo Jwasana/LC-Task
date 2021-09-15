@@ -1,19 +1,29 @@
 import { useState } from "react";
+import {v4 as uuidv4 } from "uuid"
 
 const Home = () => {
   const [todoItem, setTodoitems] = useState("");
  const [items, setItems] = useState([
-   "Assignment 01",
-   "Assignment 02",
-   "Assignment 03",
-   "Quiz 01",
-   "Quiz 02",
+   {
+    id: "1234",
+    message: "quiz 01",
+    done: false,
+
+   }
+  
  ]);
 
  const handleAdd = () => {
    if(todoItem) {
-    setItems([todoItem, ... items,]);
-     setTodoitems("");
+    setItems([{
+      id: uuidv4(),
+      message: todoItem,
+      done: false,
+
+    },
+     ... items,
+    ]);
+    setTodoitems("");
 
    }
   
@@ -30,8 +40,8 @@ const Home = () => {
 
       <ul>
         {
-          items.map((item) => (
-            <li key={item}>{item}</li>
+          items.map(({id, message}) => (
+            <li key={id}>{message}</li>
           ))
         }
        
