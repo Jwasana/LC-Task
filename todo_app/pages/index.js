@@ -11,9 +11,12 @@ const Home = () => {
  ]);
 
  const handleAdd = () => {
-   setItems([
-     todoItem,... items,
-   ]);
+   if(todoItem) {
+    setItems([todoItem, ... items,]);
+     setTodoitems("");
+
+   }
+  
 
  };
   return (
