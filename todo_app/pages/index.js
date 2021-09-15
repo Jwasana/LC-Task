@@ -9,13 +9,20 @@ const Home = () => {
    "Quiz 01",
    "Quiz 02",
  ]);
+
+ const handleAdd = () => {
+   setItems([
+     todoItem,... items,
+   ]);
+
+ };
   return (
     <div>
       <h1>Todo App</h1>
       
       <div>
         <input type="text" value={todoItem} onChange={(e)=> setTodoitems(e.target.value)} />
-        <button type="button">Add</button>
+        <button type="button" onClick={handleAdd}>Add</button>
       </div>
 
       <ul>
@@ -24,7 +31,7 @@ const Home = () => {
             <li key={item}>{item}</li>
           ))
         }
-        <li>{todoItem}</li>
+       
        
       </ul>
 
