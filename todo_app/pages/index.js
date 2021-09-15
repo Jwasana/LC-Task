@@ -29,6 +29,26 @@ const Home = () => {
   
 
  };
+
+ const handdleToggle = (id)=> {
+   const _item = items.map((item) => {
+     if(item.id == id )
+     {
+       return {
+        ... item,
+        done: !item.done,
+       }
+     };
+
+
+     return item;
+   });
+
+  
+   setItems(_item);
+
+ };
+
   return (
     <div>
       <h1>Todo App</h1>
@@ -41,7 +61,7 @@ const Home = () => {
       <ul>
         {
           items.map(({id, message}) => (
-            <li key={id}>{message} - {id}</li>
+            <li key={id}>{message}</li>
           ))
         }
        
