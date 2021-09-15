@@ -61,7 +61,7 @@ const Home = () => {
       <ul>
         {
           items.map(({id, message}) => (
-            <li key={id}>{message}</li>
+            <li key={id} onClick={() => handdleToggle(id)}>{message}</li>
           ))
         }
        
