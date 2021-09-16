@@ -62,7 +62,7 @@ const Home = () => {
   return (
     <div className="w-3/4 mx-auto text-center ">
      <div className="pt-12">
-     <h1 className="text-4xl ">Todo App</h1>
+     <h1 className="text-4xl text-white">Todo App</h1>
 
      </div>
     
@@ -76,7 +76,7 @@ const Home = () => {
       
       </div>
 
-      <ul className="pt-8 text-2xl">
+      <ul className="pt-8 text-2xl text-white">
         {
           items.filter(({done}) => !done).map(({id, message }) => (
             <li key={id} onClick={() => handdleToggle(id)}

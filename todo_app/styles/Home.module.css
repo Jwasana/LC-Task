@@ -13,6 +13,6 @@
 }
 
 .item.done {
-    @apply opacity-5 line-through;
+    @apply  line-through;
 
 }
