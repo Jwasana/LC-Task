@@ -61,7 +61,13 @@ const Home = () => {
 
       <ul>
         {
-          items.map(({id, message , done}) => (
+          items.filter(({done}) => !done).map(({id, message , done}) => (
+            <li key={id} onClick={() => handdleToggle(id)} className= {cx("item", { done})}>{message}</li>
+          ))
+        }
+
+{
+          items.filter(({done}) => done).map(({id, message , done}) => (
             <li key={id} onClick={() => handdleToggle(id)} className= {cx("item", { done})}>{message}</li>
           ))
         }
