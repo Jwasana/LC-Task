@@ -62,7 +62,7 @@ const Home = () => {
   return (
     <div className="w-3/4 mx-auto text-center ">
      <div className="pt-12">
-     <h1 className="text-4xl text-white">Todo App</h1>
+     <h1 className="text-4xl text-white">Todo List</h1>
 
      </div>
     
