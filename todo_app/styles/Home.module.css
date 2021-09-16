@@ -1,7 +1,18 @@
 .item {
+    @apply py-2 border border-t-0 cursor-pointer
+
+}
+.item:first-child {
+    @apply border-t rounded-t;
+
+}
+
+.item:last-child {
+    @apply rounded-b
 
 }
 
 .item.done {
-    
+    @apply opacity-5 line-through;
+
 }

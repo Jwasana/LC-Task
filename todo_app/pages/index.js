@@ -1,6 +1,8 @@
 import cx from "classnames";
 import { useState } from "react";
-import {v4 as uuidv4 } from "uuid"
+import {v4 as uuidv4 } from "uuid";
+
+import styles from "../styles/Home.module.css"
 
 const Home = () => {
   const [todoItem, setTodoitems] = useState("");
@@ -74,16 +76,20 @@ const Home = () => {
       
       </div>
 
-      <ul className="pt-8">
+      <ul className="pt-8 text-2xl">
         {
-          items.filter(({done}) => !done).map(({id, message , done}) => (
-            <li key={id} onClick={() => handdleToggle(id)} className= {cx("item", { done})}>{message}</li>
+          items.filter(({done}) => !done).map(({id, message }) => (
+            <li key={id} onClick={() => handdleToggle(id)}
+             className= {cx(styles.item)}>{message}</li>
           ))
         }
 
 {
-          items.filter(({done}) => done).map(({id, message , done}) => (
-            <li key={id} onClick={() => handdleToggle(id)} className= {cx("item", { done})}>{message}</li>
+          items.filter(({done}) => done).map(({id, message}) => (
+            <li key={id} onClick={() => handdleToggle(id)} 
+            className= {cx(styles.item, styles.done)}>
+              {message}
+              </li>
           ))
         }
        
