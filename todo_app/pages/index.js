@@ -51,11 +51,15 @@ const Home = () => {
  };
 
   return (
-    <div>
-      <h1>Todo App</h1>
+    <div className="w-3/4 mx-auto text-center ">
+     <div className="pt-12">
+     <h1 className="text-4xl ">Todo App</h1>
+
+     </div>
+    
       
-      <div>
-        <input type="text" value={todoItem} onChange={(e)=> setTodoitems(e.target.value)} />
+      <div className="pt-5">
+        <input type="text" className="w-full rounded text-gray-900 px-4 py-2 text-center" value={todoItem} onChange={(e)=> setTodoitems(e.target.value)} />
         <button type="button" onClick={handleAdd}>Add</button>
       </div>
 
