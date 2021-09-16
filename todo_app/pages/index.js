@@ -31,6 +31,13 @@ const Home = () => {
 
  };
 
+ const handdleEnter = (e) => {
+   if(e.key == 'Enter') {
+     handleAdd();
+   }
+
+ };
+
  const handdleToggle = (id)=> {
    const _item = items.map((item) => {
      if(item.id == id )
