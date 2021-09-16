@@ -66,11 +66,15 @@ const Home = () => {
     
       
       <div className="pt-5">
-        <input type="text" className="w-full rounded text-gray-900 px-4 py-2 text-center" value={todoItem} onChange={(e)=> setTodoitems(e.target.value)} />
-        <button type="button" onClick={handleAdd}>Add</button>
+        <input type="text" className="w-full rounded text-gray-900 px-4 py-2 text-center" 
+        value={todoItem} 
+        onChange={(e)=> setTodoitems(e.target.value)}
+        onKeyDown={handdleEnter}
+         />
+      
       </div>
 
-      <ul>
+      <ul className="pt-8">
         {
           items.filter(({done}) => !done).map(({id, message , done}) => (
             <li key={id} onClick={() => handdleToggle(id)} className= {cx("item", { done})}>{message}</li>
